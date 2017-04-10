@@ -1,4 +1,4 @@
-![Image0](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_0.png)
+	![Image01](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_01.png)
 
 # Настройка сетевого фильтра, трансляция адресов. #  
 
@@ -18,46 +18,48 @@
 
 Подключение
 
-![Image1](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_1.png)
+	![Image1](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_1.png)
 
 + Определить список **установленных** сетевых устройств
 
 *Команда:* **lspci | grep Ethernet**
 
-![Image2](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_2.png)
+	![Image2](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_2.png)
 
 + Определить **параметры** сетевых интерфейсов.
 
 *Команда:* **ifconfig -a**
 
-![Image3](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_3.png)
+	![Image3](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_3.png)
 
 + Определить статические маршруты сети.
 
 *Команда:* **route -n**
 
-![Image4](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_4.png)
+	![Image4](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_4.png)
 
 + Определить **режим маршрутизации ядра** (включена или выключена).
 
-![Image5](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_5.png)
+	![Image5](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_5.png)
 
 + Определить исходные (сразу после загрузки ОС) правила фильтрации и трансляции адресов
 
  *Команда:* **iptables -L**
 
-![Image6](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_7.png)
+	![Image6](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_6.png)
 
 + Файл ifcfg-eth1 (и поднимим с помощью *команды* **ifup eth1** )
 
-![Image7](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_7.png)
+	![Image7](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_7.png)
 
+*Команда:* **service 5_4341_lunin start.**  
+*КрмандаЖ* ****service 5_4341_lunin status.**
+
+	![Image8](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_8.png)
+
+*Команда:* **service 5_4341_lunin stop.**  
 *Команда:* **service 5_4341_lunin status.**
-
-[8]
-
-*Команда:* **service 5_4341_lunin stop.**
-
+	![Image9](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_9.png)
 ## Скрипт ##
 \#!/bin/bash
 \#description: 5_4341_Iskinin
