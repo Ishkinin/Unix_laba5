@@ -1,5 +1,6 @@
 [0]
-# Настройка сетевого фильтра, трансляция адресов.#  
+
+# Настройка сетевого фильтра, трансляция адресов. #  
 
 ## Цель работы: ##  
 
@@ -16,98 +17,88 @@
 ### Протокол работы: ##
 
 Подключение
+
 [1]
 
 + Определить список **установленных** сетевых устройств
 
 *Команда:* **lspci | grep Ethernet**
+
 [2]
 
 + Определить **параметры** сетевых интерфейсов.
 
-+*Команда:* **ifconfig -a**
+*Команда:* **ifconfig -a**
+
 [3]
 
 + Определить статические маршруты сети.
 
 *Команда:* **route -n**
+
 [4]
 
 + Определить **режим маршрутизации ядра** (включена или выключена).
+
 [5]
 
 + Определить исходные (сразу после загрузки ОС) правила фильтрации и трансляции адресов
 
  *Команда:* **iptables -L**
+
 [6]
 
 + Файл ifcfg-eth1 (и поднимим с помощью *команды* **ifup eth1** )
+
 [7]
 
-* Команда:* **service 5_4341_lunin status.**
+*Команда:* **service 5_4341_lunin status.**
+
 [8]
 
 *Команда:* **service 5_4341_lunin stop.**
 
 ## Скрипт ##
 \#!/bin/bash
+\#description: 5_4341_KULIKOV
 
-
-\#IPTables
-
-\#description: 5_4341_Ishkinin
-
-
-\# Loading library functions
+PORT=22  
+ET=eth1
 
 . /etc/init.d/functions
 
-if [ -f /etc/sysconfig/network-scripts/ifcfg-eth1 ]; then
+if [ ! -f /etc/sysconfig/network ]; then  
+	exit 0  
+fi  
+. /etc/sysconfig/network
 
-	. /etc/sysconfig/network-scripts/ifcfg-eth1
-fi
-
-\##
-
-[ "${NETWORKING}"="no" ] && exit 0
-
-\##
+[ "${NETWORKING}" = "no" ] && exit 0
 
 case "$1" in
 
 start)
 
-echo 1 >/proc/sys/net/ipv4/ip_forward
-
-iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
-
-iptables -t INPUT -i eth1 -p TCP -s 0.0.0.0 —dport 22 -j DROP
-
+echo 1 > /proc/sys/net/ipv4/ip_forward  
+iptables -t nat -A POSTROUTING -o $ET -j MASQUERADE  
+iptables -A INPUT -i $ET -p TCP -s 0.0.0.0 —dport $PORT -j DROP  
 ;;
 
 stop)
 
-echo 0 >/proc/sys/net/ipv4/ip_forward
-
-iptables -F
-
+echo 0 > /proc/sys/net/ipv4/ip_forward  
+iptables -F  
 ;;
 
 status)
 
-iptables -L
-
-ifconfig
-
-route -n
-;;
-
+iptables -L  
+ifconfig  
+route -n  
+cat /proc/sys/net/ipv4/ip_forward  
+;;  
 *)
-
-echo $"Usage: $0{start|stop|restart|relaod|status}"
-
-exit 1
-
-esac
+echo $"Usage: $0 {start|stop|status}"  
+exit 1  
+esac  
 
 exit 0
