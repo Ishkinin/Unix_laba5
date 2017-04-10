@@ -1,4 +1,4 @@
-![Image1](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_0.png)
+![Image0](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_0.png)
 
 # Настройка сетевого фильтра, трансляция адресов. #  
 
@@ -18,39 +18,39 @@
 
 Подключение
 
-[1]
+![Image1](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_1.png)
 
 + Определить список **установленных** сетевых устройств
 
 *Команда:* **lspci | grep Ethernet**
 
-[2]
+![Image2](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_2.png)
 
 + Определить **параметры** сетевых интерфейсов.
 
 *Команда:* **ifconfig -a**
 
-[3]
+![Image3](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_3.png)
 
 + Определить статические маршруты сети.
 
 *Команда:* **route -n**
 
-[4]
+![Image4](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_4.png)
 
 + Определить **режим маршрутизации ядра** (включена или выключена).
 
-[5]
+![Image5](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_5.png)
 
 + Определить исходные (сразу после загрузки ОС) правила фильтрации и трансляции адресов
 
  *Команда:* **iptables -L**
 
-[6]
+![Image6](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_7.png)
 
 + Файл ifcfg-eth1 (и поднимим с помощью *команды* **ifup eth1** )
 
-[7]
+![Image7](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_7.png)
 
 *Команда:* **service 5_4341_lunin status.**
 
