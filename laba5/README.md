@@ -1,4 +1,4 @@
-[0]
+![Image1](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_0.png)
 
 # Настройка сетевого фильтра, трансляция адресов. #  
 
@@ -60,7 +60,7 @@
 
 ## Скрипт ##
 \#!/bin/bash
-\#description: 5_4341_KULIKOV
+\#description: 5_4341_Iskinin
 
 PORT=22  
 ET=eth1
