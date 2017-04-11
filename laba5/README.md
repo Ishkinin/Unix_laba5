@@ -52,15 +52,16 @@
 
 ![Image7](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_7.png)
 
-*Команда:* **service 5_4341_lunin start.**  
-*КрмандаЖ* ****service 5_4341_lunin status.**
+*Команда:* **service 5_4341_Ishkinin start.**  
+*Кoманда* ****service 5_4341_Ishkinin status.**
 
 ![Image8](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_8.png)
 
-*Команда:* **service 5_4341_lunin stop.**  
-*Команда:* **service 5_4341_lunin status.**
+*Команда:* **service 5_4341_Ishkinin stop.**  
+*Команда:* **service 5_4341_Ishkinin status.**
 ![Image9](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_9.png)
 ## Скрипт ##
+```bash
 \#!/bin/bash
 \#description: 5_4341_Iskinin
 
@@ -103,7 +104,7 @@ echo $"Usage: $0 {start|stop|status}"
 exit 1  
 esac  
 exit 0
-
+```
 
 ## Выводы: ##   
 В результате проделанной работы были получены базовые навыки с работой  
