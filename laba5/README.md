@@ -62,8 +62,8 @@
 ![Image9](https://github.com/Ishkinin/Unix_laba5/blob/master/laba5/photo_9.png)
 ## Скрипт ##
 ```bash
-\#!/bin/bash
-\#description: 5_4341_Iskinin
+#!/bin/bash
+#description: 5_4341_Iskinin
 
 PORT=22  
 ET=eth1
